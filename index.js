@@ -3,7 +3,6 @@ import { adminRouter } from "./routes/admin.route.js";
 import { clientRouter } from "./routes/client.route.js";
 import { productsRouter } from "./routes/product.route.js";
 import { cartRouter } from "./routes/cart.route.js";
-import { paymentRouter } from "./routes/payment.route.js";
 import {prisma} from "./config/db.js"
 const app = express()
 app.use(express.json())  // body parser middleware to parse JSON request bodies
@@ -30,5 +29,4 @@ app.use("/admin",adminRouter)
 app.use("/client",clientRouter)
 app.use("/product",productsRouter)
 app.use("/cart", cartRouter)
-app.use("/payment", paymentRouter)
 

@@ -1,8 +1,8 @@
 import {Router} from "express"
-import { getCartController } from "../controllers/cart.controller.js"
+import { CartController } from "../controllers/cart.controller.js"
 export const cartRouter = Router()
+const cartController = new CartController()
 
-
-cartRouter.get("/:id",  getCartController)
+cartRouter.get("/:id",  cartController.getCart)
 
 

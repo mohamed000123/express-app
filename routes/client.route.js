@@ -1,6 +1,7 @@
 import {Router} from "express"
-import { signup as controllerSignup } from "../controllers/client.controller"
+import { ClientController } from "../controllers/client.controller.js"
 export const clientRouter = Router()
+const clientController = new ClientController()
 
 // auth
-clientRouter.post("/signup", controllerSignup)
+clientRouter.post("/signup", clientController.signup)

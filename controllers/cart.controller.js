@@ -1,6 +1,11 @@
-import { getCart } from "../services/cart.service.js";
-export async function getCartController (req,res){
+import { CartService } from "../services/cart.service.js";
+export class CartController {
+   constructor (){
+     this.cartService = new CartService()
+   }
+   getCart = async (req,res)=> {
     const id = req.params.id
-    const cart  = await getCart(id)
+    const cart  = await  this.cartService.getCart(id)
     res.json(cart)
+}
 }
