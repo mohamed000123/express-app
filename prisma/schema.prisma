@@ -25,6 +25,7 @@ model User {
   password String  @db.VarChar(100)
   role   Role   @default(user)
   product  Product[]   // relation
+  RefreshTokens  RefreshToken[]
 
 }
 model Product {
@@ -37,5 +38,12 @@ model Product {
 model Cart {
   id  String  @id @default(uuid())
   count Int @db.Int()
+}
+
+model RefreshToken {
+  id  String  @id @default(uuid())
+  token String @unique  @db.Char(64)
+  userId String
+  user  User  @relation(fields:[userId], references:[id], onDelete: Cascade)
 }
 

@@ -1,20 +1,7 @@
 import {Router} from "express"
-
+import { AdminController } from "../controllers/admin.controller.js";
 export const adminRouter = Router()
 
-// // auth
-// adminRouter.post("/login",(req,res)=>{
-
-// })
-// adminRouter.post("/logout",(req,res)=>{
-
-// })
-
-// // products 
-
-// adminRouter.post("/products",(req,res)=>{
-
-// })
-// adminRouter.get("/products/:id",(req,res)=>{
-
-// })
+const adminController = new AdminController()
+adminRouter.get("/login", adminController.loginPage) 
+adminRouter.post("/login", adminController.login) 

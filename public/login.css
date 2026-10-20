@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background:
+        radial-gradient(ellipse at 15% 10%, rgba(61, 129, 246, 0.2), transparent 38%),
+        linear-gradient(135deg, #eef4ff, #f8faff 55%, #e9f0fc);
+    color: #18243a;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+form {
+    width: min(100%, 420px);
+    padding: 40px;
+    display: grid;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 24px 70px rgba(28, 52, 91, 0.14);
+}
+
+form::before {
+    content: "Admin sign in";
+    margin-bottom: 12px;
+    color: #18243a;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+
+form br {
+    display: none;
+}
+
+label {
+    margin-top: 4px;
+    color: #42516a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    border: 1px solid #d8e0ed;
+    border-radius: 10px;
+    outline: none;
+    background: #fbfcff;
+    color: #18243a;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+input::placeholder {
+    color: #98a4b6;
+}
+
+input:focus {
+    border-color: #3978e8;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(57, 120, 232, 0.14);
+}
+
+button {
+    min-height: 48px;
+    margin-top: 12px;
+    border: 0;
+    border-radius: 10px;
+    background: #2868dc;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    background: #1f58c1;
+    box-shadow: 0 8px 18px rgba(40, 104, 220, 0.24);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(40, 104, 220, 0.4);
+    outline-offset: 3px;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 30px 24px;
+        border-radius: 16px;
+    }
+}
